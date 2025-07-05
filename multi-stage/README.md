@@ -1,4 +1,4 @@
-# 📘 docker-example:basics
+# 📘 docker-example:multi-stage
 A Spring Boot web app containerized with Docker for hands-on experience with basic concepts of the multi-stage building images. It helps to understand how to create lighter containers that do not include source code files and unnecessary tools.
 
 ## 📁 Files Overview
