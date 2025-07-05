@@ -6,7 +6,6 @@ COPY ./package.json .
 RUN npm i
 COPY . .
 
-ENV SERVER_PORT=8000
-EXPOSE $SERVER_PORT
+EXPOSE 8080
 
 CMD ["npm", "start"]

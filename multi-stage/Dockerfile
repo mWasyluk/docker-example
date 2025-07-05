@@ -12,8 +12,8 @@ FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
-COPY --from=source /app-source/target/multi-stage-java-1.0.0.jar ./
+COPY --from=source /app-source/target/multi-stage-1.0.0.jar ./
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "multi-stage-java-1.0.0.jar"]
+CMD ["java", "-jar", "multi-stage-1.0.0.jar"]
