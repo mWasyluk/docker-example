@@ -9,8 +9,7 @@
 ## 🔨 Build & Run
 1. `git clone https://github.com/mWasyluk/docker-example`
 2. `cd bind-mount`
-3. `npm install`
-4. `docker run -it --rm -p 8080:8080 --mount type=bind,src="$(pwd)/src",target=/usr/app -w /usr/app --name bind-mount node:20.19.3 npm start`
+3. `docker run -it --rm -p 8080:8080 --mount type=bind,src="$(pwd)/src",target=/usr/app -w /usr/app --name bind-mount node:24.3.0-alpine3.22 sh -c "npm install && npm start"`
 
 > **For Windows OS**, prefix the above command with `MSYS_NO_PATHCONV=1`, or escape bind mount target and working dir paths with additional slash (`/`) to avoid prepending your current working dir path to them in some scenarios.
 
