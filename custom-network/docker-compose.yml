@@ -1,0 +1,18 @@
+services:
+  server:
+    build: server/
+    networks: 
+      - appnet
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./web/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./web/index.html:/usr/share/nginx/html/index.html
+    networks: 
+      - appnet
+    ports:
+      - 8080:80
+
+networks:
+  appnet:

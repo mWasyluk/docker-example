@@ -1,0 +1,18 @@
+# Stage 1 - compile and package
+FROM maven:3.8.5-openjdk-17-slim AS source
+WORKDIR /app-source
+
+COPY ./src ./src
+COPY ./pom.xml ./
+RUN mvn clean package
+
+# Stage 2 - run
+FROM eclipse-temurin:17-jre-alpine
+
+WORKDIR /app
+
+COPY --from=source /app-source/target/app.jar ./
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]
