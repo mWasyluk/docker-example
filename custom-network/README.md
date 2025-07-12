@@ -1,6 +1,4 @@
 # 📘 docker-example:custom-network
-<!-- 🎯 Goal: **binding the host's local directory to the containerized application's working directory**, allowing the server behaviour to change dynamically when host files are modified. \
-🔑 Key learnigns: **difference between named volumes and bind mounts**; enabling **automatic restart of the containerized server** after overwriting the mounted files on the host. -->
 🎯 **Goal**: running **multiple containers within the same network**, enabling them to **communicate directly via aliases**. \
 🔑 **Key learnigns**: creating custom Docker networks; isolating communication between containers; 
 
