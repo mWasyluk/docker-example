@@ -8,10 +8,11 @@
 
 ## 🔨 Build & Run
 1. `git clone https://github.com/mWasyluk/docker-example`
-2. `cd bind-mount`
-3. `docker run -it --rm -p 8080:8080 --mount type=bind,src="$(pwd)/src",target=/usr/app -w /usr/app --name bind-mount node:24.3.0-alpine3.22 sh -c "npm install && npm start"`
+2. `cd docker-example/bind-mount`
+3. `docker run -it --rm -p 8080:8080 --mount type=bind,src="$(pwd)/src",target=/usr/app -w /usr/app --name bind-mount node:lts-alpine3.21 sh -c "npm install && npm start"`
+4. Open browser and visit [http://localhost:8080](http://localhost:8080)
 
-> **For Windows OS**, prefix the above command with `MSYS_NO_PATHCONV=1`, or escape bind mount target and working dir paths with additional slash (`/`) to avoid prepending your current working dir path to them in some scenarios.
+> **For Windows OS**, prefix the `docker run ...` command with `MSYS_NO_PATHCONV=1`, or escape bind mount target and working dir paths with additional slash (`/`) to avoid prepending your current working dir path to them in some scenarios.
 
 ## 📚 Lessons Learned
 > Using the `npm ci` command instead of `npm install` is suitable for CI/CD processes as it installs exactly the same versions of the project's dependencies that have been used in the local environment. It does not install any new deps, it only verifies whether the `package-lock.json` file (it must not be ignored) contains all of the required ones, then installs their modules.

@@ -24,7 +24,7 @@ Delay launch of a dependent container until another container is up and running.
 
 ## 🔨 Build & Run
 1. `git clone https://github.com/mWasyluk/docker-example`
-2. `cd healthcheck/docker`
+2. `cd docker-example/healthcheck/docker`
 3. `docker-compose up`
 4. Open browser and visit [http://localhost:8080](http://localhost:8080)
 

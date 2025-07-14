@@ -9,12 +9,14 @@ A lightweight Express.js app containerized with Docker for hands-on experience w
 
 ## 🔨 Build & Run
 1. ```git clone https://github.com/mWasyluk/docker-example```
-2. ```cd basics```
+2. ```cd docker-example/basics```
 3. ```docker build -t docker-example:basics .```
 4. ```docker run --rm -p 8080:8080 --name basics docker-example:basics```
+5. Open browser and visit [http://localhost:8080](http://localhost:8080)
 
 ## 🚀 Pull & Run
-```docker run --rm -p 8080:8080 --name basics mwas0122/docker-example:basics```\
+1. ```docker run --rm -p 8080:8080 --name basics mwas0122/docker-example:basics```
+2. Open browser and visit [http://localhost:8080](http://localhost:8080) \
 DockerHub: [mwas0122/docker-example:basics](https://hub.docker.com/layers/mwas0122/docker-example/basics/images/sha256-71767b34a8259e5ee5eba40a18289858bbc333a510f5a4a7d29f83a2df4caa38)
 
 ## 📚 Lessons Learned

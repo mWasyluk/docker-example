@@ -10,12 +10,14 @@ A Spring Boot web app containerized with Docker for hands-on experience with bas
 
 ## 🔨 Build & Run
 1. ```git clone https://github.com/mWasyluk/docker-example```
-2. ```cd multi-stage```
-3. ```docker build -t docker-example:multi-stage```
-4. ```docker run --rm -p 8080:8080 --name multi-stage docker-example:multi-stage```
+2. ```cd docker-example/multi-stage```
+3. ```docker build -t docker-example:multi-stage .```
+4. ```docker run --rm -p 8080:8080 --name docker-example_multi-stage docker-example:multi-stage```
+5. Open browser and visit [http://localhost:8080](http://localhost:8080)
 
 ## 🚀 Pull & Run
-```docker run --rm -p 8080:8080 --name multi-stage mwas0122/docker-example:multi-stage```\
+1. ```docker run --rm -p 8080:8080 --name multi-stage mwas0122/docker-example:multi-stage```
+2. Open browser and visit [http://localhost:8080](http://localhost:8080) \
 DockerHub: [mwas0122/docker-example:multi-stage](https://hub.docker.com/layers/mwas0122/docker-example/multi-stage/images/sha256-c9f961e1d241b8a89da562a805b3f8b2e9b5a39ac28c4baba6c3cd8d38d4f62d)
 
 ## 📚 Lessons Learned

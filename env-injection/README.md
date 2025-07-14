@@ -9,8 +9,10 @@
 
 ## 🔨 Build & Run
 1. ```git clone https://github.com/mWasyluk/docker-example```
-2. ```cd env-injection```
+2. ```cd docker-example/env-injection```
 3. ```docker compose up```
+4. Open browser and visit [http://localhost:8080](http://localhost:8080)
+5. Select the PostgreSQL database type and provide the same auth details as listed in the `.env` file
 
 ## 📚 Lessons Learned
 > The ***version* key is now obsolete** for Docker Compose files.

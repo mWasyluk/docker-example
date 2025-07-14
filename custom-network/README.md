@@ -12,8 +12,9 @@
 
 ## 🔨 Build & Run
 1. `git clone https://github.com/mWasyluk/docker-example`
-2. `cd custom-network`
+2. `cd docker-example/custom-network`
 3. `docker-compose up`
+4. Open browser and visit [http://localhost:8080](http://localhost:8080)
 
 ## 📚 Lessons Learned
 * Build arguments in a Dockerfile are effective only when explicitly declared in the `ARG` instruction (setting `${ARG_NAME}` solely is not sufficient).
