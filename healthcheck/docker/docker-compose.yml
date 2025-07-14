@@ -1,0 +1,59 @@
+services:
+  db:
+    image: postgres
+    container_name: ${DB_HOST}
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    networks:
+      - appnet
+    volumes:
+      - healthcheck-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}" ] # command executed to check container condition (success = healthy)
+      interval: 5s # time between consecutive checks
+      timeout: 30s # time to wait for the command result before marking the check as failed
+      retries: 5 # number of consecutive failures before marking the container as unhealthy
+      start_period: 5s # initialization time; checks are executed in every 5s during this time (failures are not counted in retries)
+
+  backend:
+    build:
+      context: ../backend
+      dockerfile: ../docker/Dockerfile.backend
+    restart: always
+    env_file: .env
+    networks:
+      - appnet
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: [ "CMD-SHELL", "wget --spider http://localhost:8080/health" ]
+      interval: 5s
+      timeout: 30s
+      retries: 10
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ../frontend
+      additional_contexts:
+        - nginx=../nginx
+      dockerfile: ../docker/Dockerfile.frontend
+    restart: always
+    networks:
+      - appnet
+    ports:
+      - 8080:80
+    depends_on:
+      backend:
+        condition: service_healthy
+
+networks:
+  appnet:
+volumes:
+  healthcheck-data:
+    external: true

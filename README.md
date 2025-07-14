@@ -14,10 +14,12 @@
 - Learn by doing: build, tweak, experiment!
 
 ## 📚 What’s Inside
-1. [basics](./basics): Node Express server returning a string value
-2. [multi-stage](./multi-stage): Spring Boot server without source files, and using the JRE rather than the full JDK
-3. [env-injection](env-injection): Postgres and Adminer containers run with dynamically injected env variables from `.env` file
-4. [bind-mount](bind-mount): Containerized Node Express server updating dynamically on source changes made through the host \
+1. [basics](./basics): Node Express server returning a string value.
+2. [multi-stage](./multi-stage): Spring Boot server without source files, and using the JRE rather than the full JDK.
+3. [env-injection](env-injection): Postgres and Adminer containers run with dynamically injected env variables from `.env` file.
+4. [bind-mount](bind-mount): Containerized Node Express server updating dynamically on source changes made through the host. 
+5. [custom-network](custom-network) - Simple, static frontend with exclusive access to the REST server running in the same custom network. 
+6. [healthcheck](healthcheck) - Multiple services dependend on one another running one by one only if the previous one is healthy. \
 More in progress... ⏳
 
 > Each module lives in its own folder, containing source code, Docker-specific and README files.
